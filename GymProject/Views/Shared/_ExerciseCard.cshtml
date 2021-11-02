@@ -1,0 +1,16 @@
+﻿@model Exercise
+<div class="col-sm-4 col-lg-4 col-md-4">
+    <div class="thumbnail">
+        <img src="@Model.ImageUrl" alt="" width="350" height="250">
+        <div class="caption">
+            <h3 class="pull-right">@Model.Category.CategoryName exercise</h3>
+            <h3>
+                <a asp-controller="Exercise"
+                   asp-action="Details"
+                   asp-route-id="@Model.ExerciseId">@Model.ExerciseName</a>
+            </h3>
+            <p>@Model.ShortDescription</p>
+        </div>
+        
+    </div>
+</div>

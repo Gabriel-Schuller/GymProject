@@ -1,0 +1,8 @@
+﻿@model ExerciseListViewModel
+
+<h1>@Model.CurrentCategory</h1>
+
+@foreach (var exercise in Model.Exercises)
+{
+    <partial name="_ExerciseCard" model="exercise" />
+}
