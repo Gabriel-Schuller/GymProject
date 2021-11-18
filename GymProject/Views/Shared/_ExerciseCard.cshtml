@@ -26,11 +26,11 @@
 </head>
 
 
-<section class="wrapper" onclick="CardClick(@Model.ExerciseId)">
+<section class="wrapper">
     <div class="container" id="container-@Model.ExerciseId">
         <div class="row">
             <div class="col-md-4" id="@Model.ExerciseId">
-                <div class="card text-white card-has-bg click-col" style="background-image:url(@Model.ImageUrl);">
+                <div class="card text-white card-has-bg click-col" onclick="CardClick(@Model.ExerciseId)"  style="background-image:url(@Model.ImageUrl);">
                     <img class="card-img d-none" src="@Model.ImageUrl" alt="@Model.ShortDescription">
                     <div class="card-img-overlay d-flex flex-column">
                         <div class="card-body">
@@ -44,7 +44,7 @@
                             </small>
                         </div>
                         <div class="card-footer" id="card-bottom-@Model.ExerciseId">
-                            <div class="media">
+                            <div class="media" id="hide-footer-@Model.ExerciseId">
                                 <img class="mr-3 rounded-circle" src="https://cdn0.iconfinder.com/data/icons/user-pictures/100/male-512.png" alt="Generic placeholder image" style="max-width:50px">
                                 <div class="media-body">
                                     <h6 class="my-0 text-white d-block">Gabriel Schuller</h6>
@@ -105,26 +105,46 @@ function CardClick(id){
 
 function GenerateInbox(id)
     {
-        var whereTo = document.getElementById('card-bottom-'+id)
-// <div class="">
-//   <span class="input-group-text" id="basic-addon1"></span>
-//   <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-// </div>
-        var div = document.createElement("div")
-        div.className = 'input-group mb-3'
-        var span = document.createElement('span')
-        span.className = 'input-group-text'
-        span.innerText = "Reps"
-        span.id="basic-addon1"
-        var input = document.createElement('input')
-        input.className = 'form-control'
-        
-        
+        var toBeHidden = $('#' + 'hide-footer-'+id)
+        if (CheckIfInputAlreadyDisplayed(id))
+        {
+            toBeHidden.hide()
+            var whereTo = document.getElementById('card-bottom-'+id)
+            var div = document.createElement("div")
+            div.className = 'input-group mb-3'
+            div.id = 'reps-'+id
+            var span = document.createElement('button')
+            span.className = 'input-group-text'
+            span.innerText = "Submit"
+            span.id="basic-addon1"
+            var input = document.createElement('input')
+            input.className = 'form-control'
+            input.placeholder="Reps"
+            div.addEventListener('click', ev => ev.preventDefault())
+            input.onclick = (ev) => {ev.stopImmediatePropagation()}
+            div.append(span)
+            div.append(input)
+            whereTo.append(div)
+        }
+        else 
+        {
+            let whatTo = 'reps-'+id
+            $('#'+whatTo).remove()
+            toBeHidden.show()
+        }
     }
 
 function CheckIfVisible(id) {
-    selectedElement = $('#description-'+id)
-    console.log(selectedElement[0].style.display)
+    const selectedElement = $('#description-' + id);
   return selectedElement[0].style.display;
 }
+
+function CheckIfInputAlreadyDisplayed(id)
+{
+    let whatTo = 'reps-'+id
+    let results = document.getElementById(whatTo)
+    console.log(results !== null)
+    return results === null
+}
+
 </script>
