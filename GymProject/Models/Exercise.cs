@@ -14,6 +14,7 @@ namespace GymProject.Models
         public string ShortDescription { get; set; }
         public string LongDescription { get; set; }
         public string ImageUrl { get; set; }
+        public string YoutubeUrl { get; set; }
         public string Rating { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,23 +9,23 @@ using GymProject.Models;
 
 namespace GymProject.Controllers
 {
-    public class ExercisesssssController : Controller
+    public class AdminExercise : Controller
     {
         private readonly AppDbContext _context;
 
-        public ExercisesssssController(AppDbContext context)
+        public AdminExercise(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Exercisesssss
+        // GET: AdminExercise
         public async Task<IActionResult> Index()
         {
             var appDbContext = _context.Exercises.Include(e => e.Category);
             return View(await appDbContext.ToListAsync());
         }
 
-        // GET: Exercisesssss/Details/5
+        // GET: AdminExercise/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,19 +44,19 @@ namespace GymProject.Controllers
             return View(exercise);
         }
 
-        // GET: Exercisesssss/Create
+        // GET: AdminExercise/Create
         public IActionResult Create()
         {
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
             return View();
         }
 
-        // POST: Exercisesssss/Create
+        // POST: AdminExercise/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,RepetitionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
+        public async Task<IActionResult> Create([Bind("ExerciseId,Name,RepetitionCount,ShortDescription,LongDescription,ImageUrl,YoutubeUrl,Rating,CategoryId")] Exercise exercise)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace GymProject.Controllers
             return View(exercise);
         }
 
-        // GET: Exercisesssss/Edit/5
+        // GET: AdminExercise/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -85,12 +85,12 @@ namespace GymProject.Controllers
             return View(exercise);
         }
 
-        // POST: Exercisesssss/Edit/5
+        // POST: AdminExercise/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,RepetionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
+        public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,Name,RepetitionCount,ShortDescription,LongDescription,ImageUrl,YoutubeUrl,Rating,CategoryId")] Exercise exercise)
         {
             if (id != exercise.ExerciseId)
             {
@@ -121,7 +121,7 @@ namespace GymProject.Controllers
             return View(exercise);
         }
 
-        // GET: Exercisesssss/Delete/5
+        // GET: AdminExercise/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -140,7 +140,7 @@ namespace GymProject.Controllers
             return View(exercise);
         }
 
-        // POST: Exercisesssss/Delete/5
+        // POST: AdminExercise/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

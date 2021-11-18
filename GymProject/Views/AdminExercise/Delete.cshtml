@@ -1,4 +1,4 @@
-﻿@model GymProject.Models.Exercise
+@model GymProject.Models.Exercise
 
 @{
     ViewData["Title"] = "Delete";
@@ -40,6 +40,12 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.ImageUrl)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.YoutubeUrl)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.YoutubeUrl)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Rating)
