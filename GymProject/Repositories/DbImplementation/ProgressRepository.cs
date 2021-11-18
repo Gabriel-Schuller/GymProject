@@ -19,7 +19,7 @@ namespace GymProject.Models
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Progress> GetUserProgress(int userID)
+        public IEnumerable<Progress> GetUserProgress(int userId)
         {
             throw new NotImplementedException();
         }

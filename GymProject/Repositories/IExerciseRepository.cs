@@ -8,7 +8,7 @@ namespace GymProject.Models
     public interface IExerciseRepository
     {
         IEnumerable<Exercise> AllExercises { get; }
-        IEnumerable<Exercise> ExercisesOfCategory(int IdOfCategory);
-        Exercise GetExerciseById(int ExerciseId);
+        IEnumerable<Exercise> ExercisesOfCategory(int categoryId);
+        Exercise GetExerciseById(int exerciseId);
     }
 }

@@ -17,14 +17,14 @@ namespace GymProject.Models
 
         public IEnumerable<Exercise> AllExercises => _appDbContext.Exercises.Include(e => e.Category);
 
-        public IEnumerable<Exercise> ExercisesOfCategory(int IdOfCategory)
+        public IEnumerable<Exercise> ExercisesOfCategory(int categoryId)
         {
-            return _appDbContext.Exercises.Include(c => c.Category).Where(e => e.CategoryId == IdOfCategory);
+            return _appDbContext.Exercises.Include(c => c.Category).Where(e => e.CategoryId == categoryId);
         }
 
-        public Exercise GetExerciseById(int ExerciseId)
+        public Exercise GetExerciseById(int exerciseId)
         {
-            return _appDbContext.Exercises.FirstOrDefault(e => e.ExerciseId == ExerciseId);
+            return _appDbContext.Exercises.FirstOrDefault(e => e.ExerciseId == exerciseId);
         }
     }
 }

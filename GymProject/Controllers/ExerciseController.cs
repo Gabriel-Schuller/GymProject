@@ -31,9 +31,9 @@ namespace GymProject.Controllers
             }
             else
             {
-                exercise = _exerciseRepository.AllExercises.Where(e => e.Category.CategoryName == category)
+                exercise = _exerciseRepository.AllExercises.Where(e => e.Category.Name == category)
                     .OrderBy(e => e.ExerciseId);
-                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.Name == category)?.Name;
 
             }
             return View(new ExerciseListViewModel(exercise, currentCategory));

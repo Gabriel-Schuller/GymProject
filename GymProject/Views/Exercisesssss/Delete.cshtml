@@ -12,16 +12,16 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ExerciseName)
+            @Html.DisplayNameFor(model => model.Name)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ExerciseName)
+            @Html.DisplayFor(model => model.Name)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EserciseRepetitionCount)
+            @Html.DisplayNameFor(model => model.RepetitionCount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EserciseRepetitionCount)
+            @Html.DisplayFor(model => model.RepetitionCount)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.ShortDescription)
@@ -52,7 +52,7 @@
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Category.CategoryId)
-        </dd class>
+        </dd>
     </dl>
     
     <form asp-action="Delete">

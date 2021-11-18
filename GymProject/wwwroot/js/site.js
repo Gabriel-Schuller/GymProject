@@ -1,4 +1,11 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// $('.col-md-4').on('click', (event)=> {
 
-// Write your JavaScript code.
+// let cards = $('.col-md-4')
+// for (let i=0; i<cards.length; i++){
+//     cards[i].addEventListener('click', function () {CardClick(cards[i].id)})
+// }
+//
+// function CardClick(id){
+//     console.log(id)
+// }
+

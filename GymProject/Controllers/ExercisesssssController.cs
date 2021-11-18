@@ -56,7 +56,7 @@ namespace GymProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ExerciseId,ExerciseName,EserciseRepetitionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
+        public async Task<IActionResult> Create([Bind("Id,Name,RepetitionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
         {
             if (ModelState.IsValid)
             {
@@ -90,7 +90,7 @@ namespace GymProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ExerciseId,ExerciseName,EserciseRepetitionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,RepetionCount,ShortDescription,LongDescription,ImageUrl,Rating,CategoryId")] Exercise exercise)
         {
             if (id != exercise.ExerciseId)
             {
