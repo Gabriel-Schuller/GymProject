@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace GymProject.Models
 {
-    public interface IDailyExerciseRepository
+    public interface IProgressRepository
     {
-        IEnumerable<Progress> AllDays { get; }
+        IEnumerable<Progress> GetUserProgress(int userID);
         Progress GetProgressByDay(DateTime day);
     }
 }
