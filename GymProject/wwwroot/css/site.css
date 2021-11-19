@@ -123,9 +123,6 @@ body {
   left: 0;
   background: inherit;
   -webkit-filter: grayscale(1);
-  -moz-filter: grayscale(100%);
-  /*-ms-filter: grayscale(100%);*/
-  -o-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 .card.card-has-bg:hover {

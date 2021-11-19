@@ -1,27 +1,37 @@
 <head>
     <link href="https://fonts.googleapis.com/css?family=Quicksand:400,700" rel="stylesheet">
-    <link href="~/css/BMI.css" rel="stylesheet"/>
+    <link href="~/css/bmi.css" rel="stylesheet"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
 </head>
 <body>
-<h3><b>B</b>ody <b>M</b>ass <b>I</b>ndex Calculator</h3>
+
+<b><h1 class="text-dark font-weight-bold">Body Mass Index Calculator</h1></b>
 <form class="form" id="form" onsubmit="return validateForm()">
     <div class="row-one">
-        <input type="text" class="text-input" id="age" autocomplete="off" required/><p class="text">Age</p>
+        <input type="text" class="text-input" id="age" autocomplete="off" required/>
+        <p class="text">Age</p>
+        <br/>
+        <br/>
         <label class="container">
-            <input type="radio" name="radio" id="f"><p class="text">Female</p>
+            <input type="radio" name="radio" id="f">
+            <p class="text">Female</p>
             <span class="checkmark"></span>
         </label>
         <label class="container">
-            <input type="radio" name="radio" id="m"><p class="text">Male</p>
+            <input type="radio" name="radio" id="m">
+            <p class="text">Male</p>
             <span class="checkmark"></span>
         </label>
     </div>
 
     <div class="row-two">
-        <input type="text" class="text-input" id="height" autocomplete="off" required><p class="text">Height (cm)</p>
-        <input type="text" class="text-input" id="weight" autocomplete="off" required><p class="text">Weight (kg)</p>
+        <input type="text" class="text-input" id="height" autocomplete="off" required>
+        <p class="text">Height (cm)</p>
+        <input type="text" class="text-input" id="weight" autocomplete="off" required>
+        <p class="text">Weight (kg)</p>
     </div>
-    <button type="button" id="submit">Submit</button>
+    <button type="button" class="btn btn-dark" id="submit">Done</button>
 </form>
 </body>
 
@@ -34,7 +44,7 @@ var female = document.getElementById("f");
 var form = document.getElementById("form");
 
 function validateForm(){
-  if(age.value==='' || height.value==='' || weight.value==='' || (male.checked===false && female.checked===false)){
+  if(age.value=='' || height.value=='' || weight.value=='' || (male.checked==false && female.checked==false)){
     alert("All fields are required!");
     document.getElementById("submit").removeEventListener("click", countBmi);
   }else{
