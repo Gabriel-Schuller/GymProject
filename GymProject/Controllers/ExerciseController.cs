@@ -3,6 +3,7 @@ using GymProject.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,6 +38,13 @@ namespace GymProject.Controllers
 
             }
             return View(new ExerciseListViewModel(exercise, currentCategory));
+        }
+        
+        
+        public string Test(string category)
+        {
+            Console.WriteLine(category);
+            return Json(category).ContentType;
         }
 
         public IActionResult Details(int id)

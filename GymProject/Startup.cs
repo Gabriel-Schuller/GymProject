@@ -36,8 +36,8 @@ namespace GymProject
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
-
             services.AddAuthentication();
+            services.AddAuthorization();
 
         }
 

@@ -20,10 +20,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations" />
-  </ItemGroup>
-
-  <ItemGroup>
     <_ContentIncludedByDefault Remove="Views\Exercisesssss\Create.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Exercisesssss\Delete.cshtml" />
     <_ContentIncludedByDefault Remove="Views\Exercisesssss\Details.cshtml" />

@@ -11,5 +11,6 @@ namespace GymProject.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public List<Exercise> Exercises { get; set; }
+        public List<Muscle> Muscles { get; set; }
     }
 }

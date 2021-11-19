@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using GymProject.Models;
 
 namespace GymProject.Models
 {
@@ -19,6 +20,7 @@ namespace GymProject.Models
 
         public DbSet<Exercise> Exercises { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<GymProject.Models.Muscle> Muscle { get; set; }
         //public DbSet<Progress> Progresses { get; set; }
 
 

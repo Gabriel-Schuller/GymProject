@@ -4,22 +4,24 @@
 
 .muscle-groups {
     position: relative;
-    background: #eee;
-    width: 320px;
+    /*background: #eee;*/
+    width: 100vh;
+    height: 100%;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);
-    overflow: hidden;
-    border-top: 0.75rem solid #00bcd4;
+    /*box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, .5);*/
+    /*overflow: hidden;*/
+    /*border-top: 0.75rem solid #00bcd4;*/
+    transform: scale(1.4);
 }
-.muscle-groups h1 {
-    margin: -0.5rem -1rem 1rem;
-    padding: 0 1rem 0.75rem;
-    background: #00bcd4;
-    color: #eee;
-    text-align: center;
-    font-size: 1.25rem;
-}
+/*.muscle-groups h1 {*/
+/*    margin: -0.5rem -1rem 1rem;*/
+/*    padding: 0.2rem 1rem 1rem 1rem;*/
+/*    background: #00bcd4;*/
+/*    color: #eee;*/
+/*    text-align: center;*/
+/*    font-size: 1.4rem;*/
+/*}*/
 .muscle-groups h2 {
     margin: 0 0 0.5rem;
     font-size: 0.8rem;
@@ -53,7 +55,7 @@
 }
 .muscle-groups svg {
     position: absolute;
-    right: -1.5rem;
+    right: 5.5rem;
     bottom: 3rem;
     height: 350px;
     z-index: 100;
@@ -182,9 +184,9 @@ html {
     background: linear-gradient(25deg, #111, #555);
 }
 body {
-    font-family: Roboto;
+    font-family: Roboto, serif;
 }
-#muscle-mania {
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -192,7 +194,7 @@ body {
     width: 100%;
     padding: 2rem 0;
 }
-#muscle-mania .info {
+main .info {
     font-size: 0.8rem;
     display: block;
     width: 250px;
@@ -201,10 +203,22 @@ body {
     padding-left: 2rem;
     opacity: 0.5;
 }
-#muscle-mania .info:hover {
+main .info:hover {
     opacity: 1;
 }
-#muscle-mania .info a {
+main .info a {
     color: #eee;
 }
- 
+
+#train-button{
+    transform: scale(2.8);
+    position: relative;
+    right: -200px;
+    bottom: -100px;
+}
+
+#train-div{
+    position: relative;
+    right: -150px;
+    bottom: 100px;
+}

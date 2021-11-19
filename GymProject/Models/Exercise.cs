@@ -17,6 +17,7 @@ namespace GymProject.Models
         public string YoutubeUrl { get; set; }
         public string Rating { get; set; }
         public int CategoryId { get; set; }
+        public MuscleExerciseRelationship Relationship;
         public Category Category { get; set; }
 
     }
