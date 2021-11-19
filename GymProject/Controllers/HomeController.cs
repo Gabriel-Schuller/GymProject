@@ -23,6 +23,11 @@ namespace GymProject.Controllers
             return View();
         }
 
+        public IActionResult BMICalculator()
+        {
+            return View();
+        }
+
         
     }
 }
